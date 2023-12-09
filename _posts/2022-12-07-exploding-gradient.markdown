@@ -15,6 +15,12 @@ Imagine you're training a neural network, and the process you use to adjust the 
 
 *The gradient of each weight is essentially a product of gradients calculated at each layer, so with many multiplications you get eventually large numbers*
 
+#### (note - paraller) Chaos theory
+
+[Chaos theory]
+
+The exploding gradient problem in neural networks shares a conceptual similarity with Chaos Theory in terms of sensitivity and unpredictability. In Chaos Theory, small variations in initial conditions can lead to vastly different outcomes, a phenomenon known as the "butterfly effect." Similarly, in neural networks, slight changes in initial weights or inputs can result in large, unpredictable changes in gradient values during backpropagation, leading to unstable and erratic behavior in the training process. 
+
 ## Why Does It Matter?
 
 1. **Numerical Mess:**
