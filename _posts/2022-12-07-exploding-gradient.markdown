@@ -13,10 +13,12 @@ When you're training deep neural networks, you might run into what's called the 
 
 Imagine you're training a neural network, and the process you use to adjust the network's brain (the weights) starts to go haywire. The adjustments (gradients) become really, really big. So big that they cause trouble, making the network's learning unstable. This is what we mean by "exploding gradients."
 
+*The gradient of each weight is essentially a product of gradients calculated at each layer, so with many multiplications you get eventually large numbers*
+
 ## Why Does It Matter?
 
 1. **Numerical Mess:**
-   - Huge gradients can mess up calculations, leading to errors or weird values (like NaN, which stands for "Not a Number").
+   - Huge gradients can mess up calculations, leading to errors or weird values.
 
 2. **Learning Gets Derailed:**
    - If your network's learning adjustments are too big, it can overshoot the good spots it's supposed to find, making the learning process ineffective.
