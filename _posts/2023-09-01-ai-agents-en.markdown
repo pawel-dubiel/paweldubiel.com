@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Advancing AI: Bridging Specialized Agents Towards General Intelligence"
-date:   2023-09-01 15:00:00 +0000
-categories: 
+title: "Advancing AI: Bridging Specialized Agents Towards General Intelligence"
+date: 2023-09-01 15:00:00 +0000
+categories:
 ---
 
 The development of artificial intelligence is moving toward the creation of general artificial intelligence (AGI), that is, AI systems at the level of human intelligence, which will be able to learn, reason and solve complex problems on their own. However, before we reach this level, we are facing an era of specialized AI agents working together.
