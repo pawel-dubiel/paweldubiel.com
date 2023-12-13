@@ -2,7 +2,7 @@
 layout: post
 title:  "W stronę Współpracujących Agentów Specjalistycznych - Krok Ku Ogólnej Sztucznej Inteligencji"
 date:   2023-09-01 15:00:00 +0000
-categories:  "Artificial Intelligence Evolution" "Specialized AI Agents"
+categories:  
 ---
 
 Rozwój sztucznej inteligencji zmierza w kierunku stworzenia ogólnej sztucznej inteligencji (AGI), czyli systemów AI na poziomie ludzkiej inteligencji, które będą w stanie samodzielnie uczyć się, rozumować i rozwiązywać złożone problemy. Jednak zanim osiągniemy ten poziom, czeka nas era współpracujących ze sobą wyspecjalizowanych agentów AI.
