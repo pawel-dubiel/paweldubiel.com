@@ -7,6 +7,9 @@ categories: google gemini-pro
 
 (personal note)
 
+I've been experimenting with Gemini-Pro via Bard for a while now. However, my assessment is that it still falls short of the capabilities offered by GPT-4.
+
+
 ## Overview
 A comprehensive analysis of Gemini-Pro reveals important insights, particularly in comparison with GPT 3.5 and GPT 4. This investigation uncovers several misconceptions and limitations.
 
