@@ -6,7 +6,7 @@ categories: google gemini-pro
 ---
 # DeepMind Unveils Groundbreaking Gemini AI Capable of Multimodal Reasoning
 
-**DeepMind**, the technology giant, has recently open-sourced **Gemini**, their latest deep learning model. Gemini is unique in its ability to perform multimodal reasoning across various platforms including text, images, video, audio, and even code. This is a notable development for IT specialists interested in AI advancements, as Gemini represents a significant step forward in creating more capable and flexible AI systems.
+**DeepMind**, the technology giant, has recently open-sourced **Gemini**, their latest deep learning model. Gemini is unique in its ability to perform multimodal reasoning across various platforms including text, images, video, audio, and even code. This is a notable development for people interested in AI advancements, as Gemini represents a significant step forward in creating more capable and flexible AI systems.
 
 ## What Makes Gemini Standout?
 Gemini is built upon an architecture similar to DeepMind's earlier **[Gato model](https://en.wikipedia.org/wiki/Gato_(DeepMind))**. It excels in:
