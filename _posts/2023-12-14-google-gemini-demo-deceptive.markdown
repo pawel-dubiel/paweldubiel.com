@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Note: Gemini-Pro: Insights and Analysis"
-date: 2023-12-14 15:00:00 +0000
+date: 2023-12-14 10:00:00 +0000
 categories: google gemini-pro
 ---
 
