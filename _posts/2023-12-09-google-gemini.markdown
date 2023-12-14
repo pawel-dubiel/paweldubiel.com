@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "DeepMind's Gemini: A Multimodal AI Marvel"
+title: "DeepMind Unveils Groundbreaking Gemini AI Capable of Multimodal Reasoning"
 date: 2023-12-09 15:00:00 +0000
 categories: google gemini-pro
 ---
-# DeepMind Unveils Groundbreaking Gemini AI Capable of Multimodal Reasoning
+
 
 **DeepMind**, the technology giant, has recently open-sourced **Gemini**, their latest deep learning model. Gemini is unique in its ability to perform multimodal reasoning across various platforms including text, images, video, audio, and even code. This is a notable development for people interested in AI advancements, as Gemini represents a significant step forward in creating more capable and flexible AI systems.
 
