@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Starting with the Basics: The Key to Mastery in Technology"
