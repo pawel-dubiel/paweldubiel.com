@@ -5,7 +5,7 @@ date: 2023-12-14 12:00:00 +0000
 categories: programming pearls
 ---
 
-When I first laid hands on "Programming Pearls" by Jon Bentley a unique guide into the world of coding, I was a mere 11-year-old. This gift came from my uncle, who was kind of responding to my budding passion for programming. I recall delving into its pages with breathless anticipation, exploring the art of refining algorithms, uncovering secrets to enhance computational prowess, and learning about crafting algorithms with both elegance and efficiency. Each chapter, a new breath of knowledge, filled me with an excitement only a young person could understand.
+When I first laid hands on "Programming Pearls" by Jon Bentley a unique guide into the world of coding, I was a mere 10/11-year-old. This gift came from my uncle, who was kind of responding to my budding passion for programming. I recall delving into its pages with breathless anticipation, exploring the art of refining algorithms, uncovering secrets to enhance computational prowess, and learning about crafting algorithms with both elegance and efficiency. Each chapter, a new breath of knowledge, filled me with an excitement only a young person could understand. Maybe I didn't understand everything in terms of coding, but I remember the great stories, associated with the book.
 
 But a few years later (pre-internet era), seeing how far computer technology had advanced, I remember began to doubt the point of these optimisations. After all, we have faster and faster processors, more memory, better compilers - does anyone else bother with minor tweaks to inefficient bits of code?
 
