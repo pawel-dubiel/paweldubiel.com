@@ -32,4 +32,4 @@ Gemini opens up numerous possibilities for building advanced multimodal applicat
 - Development of multimodal chatbots.
 
 ### Conclusion
-Gemini stands out as a versatile and innovative model, unlocking new possibilities in AI by combining different modalities. It's an exciting advancement for DeepMind and the AI community. As an IT specialist, the potential for creative and impactful applications using Gemini's multimodal capabilities is something I look forward to exploring.
+Gemini stands out as a versatile and innovative model, unlocking new possibilities in AI by combining different modalities. It's an exciting advancement for DeepMind and the AI community. The potential for creative and impactful applications using Gemini's multimodal capabilities is something I look forward to exploring.
