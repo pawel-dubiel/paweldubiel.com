@@ -5,7 +5,7 @@ date: 2023-12-14 10:00:00 +0000
 categories: google gemini-pro
 ---
 
-(personal note)
+(personal note ) This is for gemini-pro still awaiting for release of the ultra model
 
 I've been experimenting with Gemini-Pro via Bard for a while now. However, my assessment is that it still falls short of the capabilities offered by GPT-4.
 
