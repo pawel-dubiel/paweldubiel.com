@@ -22,4 +22,8 @@ LLaVA-v1.5-13B excels in processing and synthesizing information from both text 
 - **Open-Source:** The model's source code and training data are publicly available for community use and enhancement.
 - **Apache 2.0 License:** This allows for both research and commercial applications.
 
+## Perfrormance
+
+![png](/assets/LLaVA/llava_v1_5_radar.jpeg)
+
 More info [LLaVA project website](https://llava-vl.github.io/).
