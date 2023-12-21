@@ -17,7 +17,6 @@ LLaVA-v1.5-13B's development involved fine-tuning on the LLAMA2 model, enhancing
 - **450K Academic-Task-Oriented VQA Data:** Focused on visual question answering.
 - **40K ShareGPT Data:** Providing diverse training points.
 
-
 LLaVA-v1.5-13B excels in processing and synthesizing information from both text and images, outperforming GPT-4 in some tests.
 
 - **Open-Source:** The model's source code and training data are publicly available for community use and enhancement.
