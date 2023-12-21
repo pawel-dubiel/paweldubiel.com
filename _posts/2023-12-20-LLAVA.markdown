@@ -17,12 +17,14 @@ LLaVA-v1.5-13B's development involved fine-tuning on the LLAMA2 model, enhancing
 - **450K Academic-Task-Oriented VQA Data:** Focused on visual question answering.
 - **40K ShareGPT Data:** Providing diverse training points.
 
-LLaVA-v1.5-13B excels in processing and synthesizing information from both text and images, outperforming GPT-4 in some tests.
-
+## Licensing
+- **Based on LLAMA2** - Llama 2 is available for free for research and commercial use.
 - **Open-Source:** The model's source code and training data are publicly available for community use and enhancement.
 - **Apache 2.0 License:** This allows for both research and commercial applications.
 
 ## Perfrormance
+
+LLaVA-v1.5-13B excels in processing and synthesizing information from both text and images, outperforming GPT-4 in some tests.
 
 ![png](/assets/LLaVA/llava_v1_5_radar.jpeg)
 
