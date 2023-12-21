@@ -22,7 +22,7 @@ LLaVA-v1.5-13B's development involved fine-tuning on the LLAMA2 model, enhancing
 - **Open-Source:** The model's source code and training data are publicly available for community use and enhancement.
 - **Apache 2.0 License:** This allows for both research and commercial applications.
 
-## Perfrormance
+## Performance
 
 LLaVA-v1.5-13B excels in processing and synthesizing information from both text and images, outperforming GPT-4 in some tests.
 
