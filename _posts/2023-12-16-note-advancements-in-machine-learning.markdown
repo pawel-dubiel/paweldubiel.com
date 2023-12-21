@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Note on Advancements in machine learning for machine learning"
+title: "Note on Advancements in machine learning"
 date: 2023-12-16 10:00:00 +0000
 categories: machine learning
 ---
