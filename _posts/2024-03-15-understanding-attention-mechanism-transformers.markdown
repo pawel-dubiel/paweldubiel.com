@@ -38,8 +38,12 @@ To capture different aspects of contextual relationships, transformers employ mu
 
 The outputs from all the attention heads are then concatenated and passed through a linear transformation to produce the final updated embeddings. This multi-headed approach enables the transformer to capture rich and nuanced representations of the input text.
 
+## The Quadratic Scaling Problem
+Context plays a vital role in understanding language. Words and phrases often have different meanings depending on the surrounding text. To accurately interpret and generate language, transformer models need to consider a sufficiently large context window. However, as the context window size increases, the computational complexity and memory requirements of the model also grow, making it challenging to scale up.
+
+One of the primary obstacles in increasing the context window size is the quadratic scaling problem. In the original transformer architecture, the attention mechanism computes pairwise interactions between all tokens within the context window. As the number of tokens grows, the computational cost and memory usage increase quadratically. This quadratic scaling limits the practical size of the context window, as the computational resources required become prohibitively expensive. 
+
 ## Scaling Up with Parallelization
 One of the key advantages of the attention mechanism is its parallelizability. The computations involved in attention can be efficiently distributed across multiple GPUs, allowing transformers to scale up to massive sizes. This scalability has been a driving force behind the success of large language models like GPT-3, which boast billions of parameters and exhibit remarkable performance on a wide range of tasks.
-
 
 Attention is the secret sauce that powers transformers and enables them to achieve state-of-the-art results in natural language processing. By selectively focusing on relevant tokens and capturing rich contextual relationships, attention allows transformers to understand language at a deeper level. As we continue to push the boundaries of AI and develop even more powerful language models, attention will undoubtedly remain a fundamental building block, driving innovation and unlocking new possibilities in the field of natural language processing.
