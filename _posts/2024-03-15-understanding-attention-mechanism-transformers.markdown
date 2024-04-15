@@ -13,10 +13,18 @@ Before we delve into the details of attention, let's establish some fundamental 
 
 The attention mechanism enhances these embeddings, enabling them to encode rich contextual meanings beyond mere standalone words. For instance, consider the word "bank" in different contexts: "river bank," "bank account," and "bank of monitors." Initially, the word "bank" would have a similar vector in all contexts. The attention mechanism updates these vectors based on the surrounding words, allowing the model to distinguish between the different meanings of "bank" effectively.
 
-### Visualizing Attention in Action
-Consider the sentence, "He left the roses by the bank." Without context, "bank" could refer to the side of a river or a financial institution. In a transformer, the attention mechanism works by examining the relationships and context provided by surrounding words like "roses," suggesting a more likely scenario involving the river side rather than a financial setting.
+## Visualizing Attention in Action
 
-This process involves matrix operations where each word's embedding is adjusted to highlight features relevant to the surrounding context. Outputs (keys) from one part of the sentence are matched against queries from other parts, with their alignment indicating the contextual relationships among words. The result is a dynamically updated embedding that reflects the contextual significance of each word.
+To comprehend how attention mechanisms enhance understanding, consider a practical example: the sentence, "He left the roses by the bank." Without further context, the word "bank" could refer to either a financial institution or the side of a river. The role of attention here is to analyze surrounding words, such as "roses," which suggest a natural setting rather than a financial one. This determination is crucial, as it directly influences the interpretation of "bank."
+
+In a transformer model, this decision-making process involves a series of matrix operations where each word’s embedding is analyzed and adjusted. This adjustment is done through what are known as attention scores, calculated by comparing every word (or token) in the sentence against every other through a process called self-attention.
+
+1.Query, Key, and Value Representations: Each token's embedding is transformed into three different vectors: a query vector, a key vector, and a value vector. These vectors are tools the model uses to interrogate and understand each word's context.
+
+2.Scoring Contextual Relationships: The model calculates a score that measures how much focus to place on other parts of the input for each word. It does this by taking the dot product of the query vector of the current word with the key vector of every other word. A high score indicates a strong relationship and thus a higher level of attention.
+
+3.Softmax Normalization: The scores are then passed through a softmax function, which converts them into a probability distribution. This step ensures that the scores sum up to 1, allowing the model to allocate attention proportionally across the sentence.
+By following these steps, the transformer dynamically updates each word's embedding, reflecting the contextual significance identified through the attention mechanism. This allows the model not only to understand individual words but also to grasp the larger narrative or semantic structure of the text.
 
 ## The Magic of Attention
 Attention is the mechanism that allows transformers to selectively focus on different parts of the input sequence and extract relevant information. It enables the model to weigh the importance of each token in relation to others, effectively capturing the contextual dependencies that are crucial for understanding language.
