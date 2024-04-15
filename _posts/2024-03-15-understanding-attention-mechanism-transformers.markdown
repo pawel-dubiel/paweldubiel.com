@@ -69,6 +69,73 @@ Positional Embeddings: In addition to the subword embeddings, GPT models also in
 
 Fine-tuning: During the training process, the subword embeddings are fine-tuned along with the rest of the model's parameters. This allows the embeddings to adapt to the specific task and capture the nuances of the training data.
 
+### BPE in details
+
+The main idea behind BPE is to iteratively merge the most frequent pairs of characters or tokens to form new subword units, thereby creating a vocabulary of subword units that can effectively represent the original text corpus. Let's dive into the details of the BPE algorithm.
+
+Step 1: Initialization
+
+Start with a corpus of text data, which can be a large collection of sentences or documents.
+Split the text into individual characters or basic units, such as words or word fragments.
+Create an initial vocabulary consisting of all the unique characters or basic units in the corpus.
+Step 2: Iterative Merging
+
+Count the frequency of each pair of consecutive units in the vocabulary.
+Identify the most frequent pair of units in the vocabulary.
+Merge the most frequent pair into a new subword unit and add it to the vocabulary.
+Replace all occurrences of the merged pair in the corpus with the new subword unit.
+Update the frequency counts of the pairs in the vocabulary based on the merged corpus.
+Step 3: Repeat Iterative Merging
+
+Repeat Step 2 iteratively until a desired vocabulary size is reached or until no more frequent pairs can be merged.
+The resulting vocabulary will consist of a mix of individual characters, subword units, and possibly whole words.
+Step 4: Encoding and Decoding
+
+Once the BPE vocabulary is created, the original text can be encoded by replacing each word with its corresponding subword units.
+To decode the text back into its original form, simply concatenate the subword units and replace them with their corresponding original words.
+Here's a simple example to illustrate the BPE algorithm:
+
+Suppose we have the following text corpus:
+"low", "lower", "newest", "wider"
+
+Initial vocabulary:
+{'l', 'o', 'w', 'e', 'r', 'n', 'w', 'e', 's', 't', 'i', 'd'}
+
+Iterative Merging:
+
+Most frequent pair: 'er' (appears in "lower" and "wider")
+Merge 'e' and 'r' into 'er'
+Updated vocabulary: {'l', 'o', 'w', 'er', 'n', 'w', 'e', 's', 't', 'i', 'd'}
+
+Most frequent pair: 'er' (appears in "lower" and "wider")
+Merge 'er' and '' (word boundary) into 'er'
+Updated vocabulary: {'l', 'o', 'w', 'er_', 'n', 'w', 'e', 's', 't', 'i', 'd'}
+
+Most frequent pair: 'low' (appears in "low" and "lower")
+Merge 'l', 'o', and 'w' into 'low'
+Updated vocabulary: {'low', 'er_', 'n', 'w', 'e', 's', 't', 'i', 'd'}
+
+The resulting BPE vocabulary: {'low', 'er_', 'n', 'w', 'e', 's', 't', 'i', 'd'}
+
+Encoded text:
+"low", "low er_", "n e w e s t", "w i d er_"
+
+The BPE algorithm has several advantages:
+
+- It can handle out-of-vocabulary words by representing them as a combination of subword units.
+- It reduces the vocabulary size while still capturing meaningful subword information.
+- It allows for efficient representation of large vocabularies and reduces the memory footprint of embedding matrices.
+- It can capture morphological and semantic relationships between words that share similar subword units.
+
+However, there are also some considerations when using BPE:
+
+The choice of the desired vocabulary size is important and can impact the granularity of the subword units.
+BPE is sensitive to the frequency of subword units in the training corpus, so it may not always generalize well to new or rare words.
+The merging process is deterministic and does not consider the semantic meaning of the subword units.
+
+Despite these considerations, BPE has proven to be a highly effective technique for subword tokenization in various natural language processing tasks. It has been widely adopted in state-of-the-art language models and has contributed to significant improvements in performance.
+
+
 ## Scaling Up with Parallelization
 One of the key advantages of the attention mechanism is its parallelizability. The computations involved in attention can be efficiently distributed across multiple GPUs, allowing transformers to scale up to massive sizes. This scalability has been a driving force behind the success of large language models like GPT-3, which boast billions of parameters and exhibit remarkable performance on a wide range of tasks.
 
