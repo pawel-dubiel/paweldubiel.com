@@ -21,7 +21,9 @@ The attention mechanism operates by computing three key components: queries, key
 ## The Dance of Queries and Keys:
 To determine which tokens are relevant to each other, the attention mechanism computes a dot product between each query and key pair. This dot product measures the similarity between the query and the key, indicating how well they align. The resulting scores form an attention pattern, a grid-like structure that captures the relationships between tokens.
 
-The attention pattern undergoes a softmax operation, which normalizes the scores and turns them into probabilities. These probabilities determine the weights assigned to each token when updating the embeddings. Tokens with higher probabilities have a greater influence on the updated embeddings, allowing the model to focus on the most relevant information.
+The attention pattern undergoes a softmax operation, which normalizes the scores and turns them into probabilities. 
+(this step ensures that the output values are in the range (0, 1) and sum up to 1)
+These probabilities determine the weights assigned to each token when updating the embeddings. Tokens with higher probabilities have a greater influence on the updated embeddings, allowing the model to focus on the most relevant information.
 
 ## The Value of Values:
 Once the attention pattern is computed, the transformer uses the value vectors to update the embeddings. The value vectors contain the information that should be added to the embeddings based on their relevance. By taking a weighted sum of the value vectors, where the weights come from the attention pattern, the model refines the embeddings to incorporate contextual information from the relevant tokens.
