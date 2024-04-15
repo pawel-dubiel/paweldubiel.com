@@ -55,7 +55,7 @@ However, as the field of natural language processing progressed, the limitations
 
 To address these limitations, newer embedding techniques emerged, particularly subword embeddings. Models like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers) adopted subword tokenization methods, such as Byte Pair Encoding (BPE) or WordPiece, which broke words into smaller subword units.
 
-Byte Pair Encoding (BPE) is a subword tokenization technique that allows the model to handle a large vocabulary efficiently. Instead of using fixed word-level embeddings like Word2Vec, GPT models learn embeddings for subword units.
+Byte Pair Encoding (BPE) is a subword tokenization technique that allows the model to handle a large vocabulary efficiently. Instead of using fixed word-level embeddings like Word2Vec, GPT models learn embeddings for subword units. In essence BPE is a data compression algorithm [A New Algorithm for Data Compression](http://www.pennelynn.com/Documents/CUJ/HTML/94HTML/19940045.HTM)
 
 The process of creating initial embeddings in GPT models can be summarized as follows:
 
