@@ -53,7 +53,7 @@ Multi-headed attention is a pivotal enhancement within transformer models that e
 Each head in a multi-headed attention mechanism can be thought of as an independent attention module, with its own set of queries, keys, and values. This configuration allows each head to focus on different aspects of the context. For example, while one head may focus on syntactic structures, another might concentrate on semantic nuances.
 By diversifying the focus, transformers can parallelly process various dimensions of the text, significantly enhancing their ability to understand complex and nuanced language patterns.
 
-Enhanced Representation Learning:
+**Enhanced Representation Learning:**
 
 The outputs from all the attention heads are combined—usually through concatenation followed by a linear transformation. This integration enables the model to synthesize a richer and more robust representation of each word, considering multiple perspectives.
 This aggregated representation is then more adept at capturing the relationships and dependencies across the text, which are essential for sophisticated language understanding tasks like translation, summarization, and sentiment analysis.
