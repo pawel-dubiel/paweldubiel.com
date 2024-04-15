@@ -5,13 +5,18 @@ date: 2024-03-15 10:00:00 +0000
 categories: Embeddings
 ---
 
-Title: Unlocking the Secrets of Attention in Transformers
-
 ## Introduction:
 In the world of artificial intelligence, transformers have revolutionized the way machines process and understand language. At the heart of these transformers lies a powerful mechanism called attention. In this article, we will dive deep into the inner workings of attention, exploring how it enables transformers to capture rich contextual meaning and produce remarkable results in various natural language processing tasks.
 
 ## Understanding the Basics:
 Before we delve into the details of attention, let's establish some fundamental concepts. In a transformer model, the input text is broken down into smaller units called tokens, which are often words or subwords. Each token is then associated with a high-dimensional vector, known as its embedding. These embeddings serve as the starting point for the transformer's journey to uncover the intricate relationships and meanings within the text.
+
+The attention mechanism enhances these embeddings, enabling them to encode rich contextual meanings beyond mere standalone words. For instance, consider the word "bank" in different contexts: "river bank," "bank account," and "bank of monitors." Initially, the word "bank" would have a similar vector in all contexts. The attention mechanism updates these vectors based on the surrounding words, allowing the model to distinguish between the different meanings of "bank" effectively.
+
+### Visualizing Attention in Action
+Consider the sentence, "He left the roses by the bank." Without context, "bank" could refer to the side of a river or a financial institution. In a transformer, the attention mechanism works by examining the relationships and context provided by surrounding words like "roses," suggesting a more likely scenario involving the river side rather than a financial setting.
+
+This process involves matrix operations where each word's embedding is adjusted to highlight features relevant to the surrounding context. Outputs (keys) from one part of the sentence are matched against queries from other parts, with their alignment indicating the contextual relationships among words. The result is a dynamically updated embedding that reflects the contextual significance of each word.
 
 ## The Magic of Attention:
 Attention is the mechanism that allows transformers to selectively focus on different parts of the input sequence and extract relevant information. It enables the model to weigh the importance of each token in relation to others, effectively capturing the contextual dependencies that are crucial for understanding language.
