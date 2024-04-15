@@ -43,6 +43,32 @@ Context plays a vital role in understanding language. Words and phrases often ha
 
 One of the primary obstacles in increasing the context window size is the quadratic scaling problem. In the original transformer architecture, the attention mechanism computes pairwise interactions between all tokens within the context window. As the number of tokens grows, the computational cost and memory usage increase quadratically. This quadratic scaling limits the practical size of the context window, as the computational resources required become prohibitively expensive. 
 
+## How the inital embeddings are generated
+
+For a long time, Word2Vec was the go-to technique for creating initial embeddings in natural language processing tasks. Developed by Tomas Mikolov and his colleagues at Google in 2013, Word2Vec revolutionized the field by introducing a simple yet powerful method to learn dense vector representations of words from large text corpora.
+
+Word2Vec utilized a shallow neural network to learn word embeddings by predicting the surrounding words given a target word (skip-gram) or predicting the target word given its context (continuous bag-of-words). By training on massive amounts of text data, Word2Vec captured semantic and syntactic relationships between words, allowing words with similar meanings to have similar vector representations.
+
+The success of Word2Vec led to its widespread adoption in various natural language processing applications. It became the standard technique for initializing word embeddings in many models, including early versions of the transformer architecture. Word2Vec embeddings were often used as pre-trained embeddings, providing a good starting point for models to build upon and fine-tune for specific tasks.
+
+However, as the field of natural language processing progressed, the limitations of Word2Vec became apparent. One major drawback was its inability to handle out-of-vocabulary words effectively. Since Word2Vec learned embeddings for individual words, it struggled with rare or unseen words that were not present in the training corpus. Additionally, Word2Vec treated each word as a distinct unit, ignoring the morphological and subword information that could provide valuable insights.
+
+To address these limitations, newer embedding techniques emerged, particularly subword embeddings. Models like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers) adopted subword tokenization methods, such as Byte Pair Encoding (BPE) or WordPiece, which broke words into smaller subword units.
+
+Byte Pair Encoding (BPE) is a subword tokenization technique that allows the model to handle a large vocabulary efficiently. Instead of using fixed word-level embeddings like Word2Vec, GPT models learn embeddings for subword units.
+
+The process of creating initial embeddings in GPT models can be summarized as follows:
+
+Tokenization: The input text is first tokenized into a sequence of tokens. GPT models use a variant of BPE called "GPT-2 tokenizer" or "GPT-3 tokenizer," which is based on the original BPE algorithm but with some modifications.
+
+Vocabulary Construction: The BPE algorithm iteratively merges the most frequent pairs of characters or tokens to form new subword units. This process continues until a desired vocabulary size is reached. The resulting vocabulary consists of a mix of whole words, subwords, and individual characters.
+
+Embedding Lookup: Each subword unit in the vocabulary is assigned a unique embedding vector. These embeddings are randomly initialized at the beginning of the training process.
+
+Positional Embeddings: In addition to the subword embeddings, GPT models also incorporate positional embeddings to capture the sequential nature of the input. Positional embeddings are learned during the training process and are added to the subword embeddings to form the final input representation.
+
+Fine-tuning: During the training process, the subword embeddings are fine-tuned along with the rest of the model's parameters. This allows the embeddings to adapt to the specific task and capture the nuances of the training data.
+
 ## Scaling Up with Parallelization
 One of the key advantages of the attention mechanism is its parallelizability. The computations involved in attention can be efficiently distributed across multiple GPUs, allowing transformers to scale up to massive sizes. This scalability has been a driving force behind the success of large language models like GPT-3, which boast billions of parameters and exhibit remarkable performance on a wide range of tasks.
 
