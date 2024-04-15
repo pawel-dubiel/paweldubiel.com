@@ -45,7 +45,7 @@ One of the primary obstacles in increasing the context window size is the quadra
 
 ## How the inital embeddings are generated
 
-For a long time, Word2Vec was the go-to technique for creating initial embeddings in natural language processing tasks. Developed by Tomas Mikolov and his colleagues at Google in 2013, Word2Vec revolutionized the field by introducing a simple yet powerful method to learn dense vector representations of words from large text corpora.
+For a long time, Word2Vec was the go-to technique for creating initial embeddings in natural language processing tasks. Developed by [Tomas Mikolov and his colleagues at Google in 2013](https://arxiv.org/abs/1301.3781), Word2Vec revolutionized the field by introducing a simple yet powerful method to learn dense vector representations of words from large text corpora.
 
 Word2Vec utilized a shallow neural network to learn word embeddings by predicting the surrounding words given a target word (skip-gram) or predicting the target word given its context (continuous bag-of-words). By training on massive amounts of text data, Word2Vec captured semantic and syntactic relationships between words, allowing words with similar meanings to have similar vector representations.
 
