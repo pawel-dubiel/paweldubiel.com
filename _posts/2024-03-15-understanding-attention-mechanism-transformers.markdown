@@ -11,10 +11,6 @@ Lets start by discussing the concepts. In a model the input text is broken down 
 
 The attention mechanism enhances these embeddings to capture nuances beyond individual words. For example consider the word "bank" used in contexts, like "river bank " "bank account,". Bank of monitors." Initially "bank" may seem consistent across these scenarios. However the attention mechanism refines these representations by considering surrounding word contexts improving the models understanding of the interpretations of "bank" with accuracy.
 
-## Visualizing Attention in Action
-
-To comprehend how attention mechanisms enhance understanding, consider a practical example: the sentence, "He left the roses by the bank." Without further context, the word "bank" could refer to either a financial institution or the side of a river. The role of attention here is to analyze surrounding words, such as "roses," which suggest a natural setting rather than a financial one. This determination is crucial, as it directly influences the interpretation of "bank."
-
 In a transformer model, this decision-making process involves a series of matrix operations where each word’s embedding is analyzed and adjusted. This adjustment is done through what are known as attention scores, calculated by comparing every word (or token) in the sentence against every other through a process called self-attention.
 
 1.Query, Key, and Value Representations: Each token's embedding is transformed into three different vectors: a query vector, a key vector, and a value vector. These vectors are tools the model uses to interrogate and understand each word's context.
