@@ -5,13 +5,11 @@ date: 2024-03-15 10:00:00 +0000
 categories: Embeddings, Transformers, LLM
 ---
 
-## Introduction
-In the world of artificial intelligence, transformers have revolutionized the way machines process and understand language. At the heart of these transformers lies a powerful mechanism called attention. In this article, we will dive deep into the inner workings of attention, exploring how it enables transformers to capture rich contextual meaning and produce remarkable results in various natural language processing tasks.
+Transformers rely on a concept known as attention that helps in language processing and comprehension. I aim to explore the complexity of attention within transformers analyzing its role in capturing cues and achieving remarkable performance across different natural language tasks.
 
-## Understanding the Basics
-Before we delve into the details of attention, let's establish some fundamental concepts. In a transformer model, the input text is broken down into smaller units called tokens, which are often words or subwords. Each token is then associated with a high-dimensional vector, known as its embedding. These embeddings serve as the starting point for the transformer's journey to uncover the intricate relationships and meanings within the text.
+Lets start by discussing the concepts. In a model the input text is broken down into units called tokens representing complete words or parts of words. Each token is assigned a dimensional vector known as an embedding, created by the transformer model to reveal connections and semantic meanings within the text.
 
-The attention mechanism enhances these embeddings, enabling them to encode rich contextual meanings beyond mere standalone words. For instance, consider the word "bank" in different contexts: "river bank," "bank account," and "bank of monitors." Initially, the word "bank" would have a similar vector in all contexts. The attention mechanism updates these vectors based on the surrounding words, allowing the model to distinguish between the different meanings of "bank" effectively.
+The attention mechanism enhances these embeddings to capture nuances beyond individual words. For example consider the word "bank" used in contexts, like "river bank " "bank account,". Bank of monitors." Initially "bank" may seem consistent across these scenarios. However the attention mechanism refines these representations by considering surrounding word contexts improving the models understanding of the interpretations of "bank" with accuracy.
 
 ## Visualizing Attention in Action
 
