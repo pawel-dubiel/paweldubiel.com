@@ -5,11 +5,11 @@ date: 2024-03-15 10:00:00 +0000
 categories: Embeddings, Transformers, LLM
 ---
 
-Transformers rely on a concept known as attention that helps in language processing and comprehension. I aim to explore the complexity of attention within transformers analyzing its role in capturing cues and achieving remarkable performance across different natural language tasks.
+Transformers rely on a concept known as attention that helps in language processing and understanding. I try to explore the complexity of attention within transformers, analyzing its role in capturing cues and achieving good performance across different natural language tasks.
 
-Lets start by discussing the concepts. In a model the input text is broken down into units called tokens representing complete words or parts of words. Each token is assigned a dimensional vector known as an embedding, created by the transformer model to reveal connections and semantic meanings within the text.
+Let's start by discussing the concepts. In a model, the input text is broken down into units called tokens, representing complete words or parts of words. To reveal connections and semantic meanings within the text, the transformer model assigns each token a dimensional vector known as an embedding.
 
-The attention mechanism enhances these embeddings to capture nuances beyond individual words. For example consider the word "bank" used in contexts, like "river bank " "bank account,". Bank of monitors." Initially "bank" may seem consistent across these scenarios. However the attention mechanism refines these representations by considering surrounding word contexts improving the models understanding of the interpretations of "bank" with accuracy.
+The attention mechanism enhances these embeddings to capture nuances beyond individual words. For example, consider the word “bank” used in contexts like “river bank“ or “bank account”. Bank of monitors.” Initially, “bank” may seem consistent across these scenarios. However, the attention mechanism refines these representations by considering surrounding word contexts, improving the model's understanding of the interpretations of “bank” with accuracy.
 
 In a transformer model, this decision-making process involves a series of matrix operations where each word’s embedding is analyzed and adjusted. This adjustment is done through what are known as attention scores, calculated by comparing every word (or token) in the sentence against every other through a process called self-attention.
 
