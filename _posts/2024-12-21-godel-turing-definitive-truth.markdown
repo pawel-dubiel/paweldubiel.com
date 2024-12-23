@@ -29,11 +29,9 @@ Gödel wasn’t the only one to show that limits are built into the systems we c
 
 The answer was **no**. Turing came up with a clever proof. In short, he imagined a program that would take any algorithm and decide whether it halts or runs forever. Then he designed a program that would do the opposite of what this “universal decider” predicted.
 
-### More Precise
+More Precise
 
 Turing assumed there was a program, call it `H`, that could determine for any program `P` and input `I` whether `P` halts on `I` or runs forever. He then constructed a new program, call it `D`, which uses `H` as a subroutine but always does the opposite of what `H` predicts when `D` is run on its own code.
-
-Concretely:
 
 1. **D** takes an input `x`.
 2. **D** asks **H** whether **D** halts on `x`.
