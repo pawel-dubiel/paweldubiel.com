@@ -74,6 +74,6 @@ Here’s the part I find beautiful: the fact that we’ll **never** find the fin
 
 Gödel, Turing, and the struggles of physics remind us that every answer leads to more questions. We’ll never explain everything, but we’ll keep learning.
 
-> But perhaps this analogy does not fit perfectly, as physicists define **models** of reality, not fundamental truths. Thus, even if a model is partial or approximate, it may be the best one available. Physics has historically often succeeded by discovering uniting principles (e.g., Newton’s laws combined celestial and terrestrial mechanics, Maxwell’s equations united electricity and magnetism).
+But perhaps this analogy does not fit perfectly, as physicists define **models** of reality, not fundamental truths. Thus, even if a model is partial or approximate, it may be the best one available. Physics has historically often succeeded by discovering uniting principles (e.g., Newton’s laws combined celestial and terrestrial mechanics, Maxwell’s equations united electricity and magnetism).
 
-* we might never discover a definitive truth—but the pursuit itself continually reshapes our understanding and expands our horizons. The journey is endless, and that is precisely why it remains so profoundly worthwhile.
+
