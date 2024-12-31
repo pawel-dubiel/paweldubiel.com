@@ -9,7 +9,7 @@ categories:
 
 I’ve always been curious about the world—the desire to figure out how it all works, to connect the dots, and to know the “why” behind it all. Could there be a single explanation for everything? Since my childhood, I always heard that we are looking to connect various theories, to find a single theory that explains everything. Yet, the deeper I look into this, the more I realize it might be something we can never truly reach.
 
-Most likely there is something I understand, but both Gödel’s and Alan Turing’s halting problem lead in this direction. Their discoveries suggest there will always be limits to what we can know or prove, no matter how clever we get. Here’s what I’ve learned and why it leads me to believe the search for truth is endless—but also endlessly worthwhile.
+Both Gödel’s and Alan Turing’s halting problem lead in this direction. There will always be limits to what we can know or prove, no matter how clever we get. Here’s what I’ve learned and why it leads me to believe the search for truth is endless—but also endlessly worthwhile.
 
 ---
 
@@ -19,7 +19,7 @@ Gödel’s work fascinates me because it starts with a simple idea: **rules and 
 
 He even built a statement to demonstrate this—essentially saying, “This statement cannot be proved.” If the system could prove it, it would create a contradiction. If it couldn’t prove it, then the statement was true but unprovable. Either way, the system had limits.
 
-But it doesn’t stop there. Gödel also showed that no system can prove its own consistency—it always needs a bigger framework to confirm it’s reliable. And that bigger system always has its own limits. So, every time we think we’ve wrapped everything up neatly, new questions appear.
+But that's not all. Gödel also showed that no system can prove its own consistency—it always needs a bigger framework to confirm it’s reliable. And that bigger system always has its own limits. So, every time we think we’ve wrapped everything up neatly, new questions appear.
 
 ---
 
