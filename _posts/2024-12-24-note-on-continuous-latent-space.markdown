@@ -100,8 +100,11 @@ Combining with Other Techniques: The authors mention that in principle you can c
 
 ## 7) Importance
 **Novelty:** This work is one of the first to propose letting an LLM do large portions of its reasoning directly in hidden states. While people have considered “pause tokens” or “latent space interventions,” Coconut’s direct feed of the last hidden state as the next input embedding is a more radical approach to bridging the output-to-input loop at the vector level.
+
 **Implications for Efficient Reasoning:** Potentially less text is produced during inference, which can be faster or more efficient in real deployment.
+
 **Implications for Model Capabilities:** The BFS-like search emerges implicitly, which is pretty cool—it suggests LLMs can spontaneously explore multiple lines of reasoning at once, given the right architecture and training scheme.
+
 **Future Directions:** Possibly (a) pretraining with continuous thoughts so that from day 1, the model learns how to do partial hidden steps, or (b) mixing continuous + textual reasoning in a single approach. Also, investigating whether latent reasoning can push LLMs to solve even harder reasoning tasks remains an open question.
 
 Traditional large language models express their full reasoning out loud in text tokens. This new approach, “Coconut,” lets the model do “silent thinking” in continuous hidden states, then only speak up in language when it needs to. This can help the model handle more complex reasoning without getting bogged down by generating each intermediate token in text—and can allow exploring multiple reasoning paths in parallel before deciding which is correct. 
