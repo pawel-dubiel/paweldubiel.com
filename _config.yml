@@ -21,10 +21,10 @@
 title: A Personal Journal of Learning and Discovery
 email: contact@paweldubiel.com
 description: >- # this means to ignore newlines until "baseurl:"
-  I’m fascinated by the ever-evolving world 
-  real-time analytics, image processing 
-  I like to write about the latest trends / papers
-  Sometimes philosophical topics
+  I’m fascinated by the ever-evolving world.
+  real-time analytics, image processing.
+  I like to write about the latest trends / papers.
+  Sometimes philosophical topics.
   And explore cutting-edge approaches in software development. 
   Oh, and I’m a big fan of the Zettelkasten method - it’s like a playground for ideas!
 baseurl: "" # the subpath of your site, e.g. /blog
