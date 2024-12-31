@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Is S.O.L.I.D wrong"
+title: "From Pizza to Principles: How Simplicity Beats Sacred Software Laws"
 date: 2024-12-31 12:00:00 +0000
 categories: code-design solid
 ---
