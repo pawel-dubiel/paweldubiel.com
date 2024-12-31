@@ -2,10 +2,10 @@
 layout: post
 title: "Note on paper Training Large Language Models to Reason in a Continuous Latent Space"
 date: 2024-12-24 19:00:00 +0000
-categories: learning, ai, latent-space, CoT
+categories: ai,machine-learning,language-models,chain-of-thought,continuous-latent-space,coconut-reasoning,logical-reasoning,model-efficiency,hidden-states,transformer-models,gpt-2,curriculum-learning,reasoning-tasks,bfs-in-ai,latent-space-reasoning,experimental-ai,nlp-innovation,ai-research,advanced-ai-architectures,computational-thinking,CoT
 ---
 
-Paper Title: Training Large Language Models to Reason in a Continuous Latent Space
+*Paper Title*: Training Large Language Models to Reason in a Continuous Latent Space
 
 Link: [https://arxiv.org/abs/2412.06769](https://arxiv.org/abs/2412.06769)
 
