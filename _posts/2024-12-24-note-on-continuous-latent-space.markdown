@@ -6,6 +6,7 @@ categories: learning, ai, latent-space, CoT
 ---
 
 Paper Title: Training Large Language Models to Reason in a Continuous Latent Space
+
 Link: [https://arxiv.org/abs/2412.06769](https://arxiv.org/abs/2412.06769)
 
 ## 1) Motivation and Main Idea
