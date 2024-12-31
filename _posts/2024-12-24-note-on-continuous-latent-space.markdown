@@ -28,7 +28,7 @@ This approach effectively “detaches” large portions of the reasoning from th
 ## 3) Coconut in Practice
 ### 3.1) Model Basics
 
-A standard language model, like GPT-2, has:
+A standard language model, like `GPT-2`, has:
 
 - Token embeddings: Turn discrete tokens (words or subwords) into vectors.
 - Transformer layers: Process sequences of embeddings.
@@ -40,8 +40,8 @@ Language mode: normal text generation—model outputs next token.
 Latent mode: each “token” step is actually the model’s last hidden state. There are no discrete text tokens here.
 
 **They introduce two special tokens:**
-- <bot> (“begin of thought”): signals when latent mode starts.
-- <eot> (“end of thought”): signals the end of latent mode, returning to normal text generation.
+- `<bot>` (“begin of thought”): signals when latent mode starts.
+- `<eot>` (“end of thought”): signals the end of latent mode, returning to normal text generation.
 
 When `<bot> `is encountered, the model no longer maps hidden states to text tokens. Instead, it takes the hidden state from the previous step (which is a continuous vector) and feeds it as the next “input embedding.” This can last for as many steps as we want, until <eot> is encountered.
 
