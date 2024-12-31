@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mysql InnoDB MVCC history log fun way"
+title: "Inside InnoDB: A Straightforward Look at Undo Logging and History"
 date: 2024-12-30 19:00:00 +0000
 categories: mysql innodb mvcc
 ---
