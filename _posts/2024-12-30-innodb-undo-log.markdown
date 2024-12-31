@@ -47,7 +47,7 @@ Now suppose a single visitor in your library sits down and starts reading. Then,
 - Excessive Undo Logs: The undone pages grow like a stack of old newspapers you haven’t thrown out.
 - Sluggish Performance: That ancient transaction has to keep scanning backward through multiple changes to find what it’s allowed to see.
 
-That’s why you often hear, “Long-running transactions are bad for MySQL.” They clog up the system, forcing it to maintain a bunch of older versions for one slowpoke.
+That’s why you often hear, **“Long-running transactions are bad for MySQL.”** They clog up the system, forcing it to maintain a bunch of older versions for one slowpoke.
 
 ## 6. Delete Doesn’t Mean Gone
 In the library, if you “delete” a book, you might expect it to vanish instantly from the shelf. But in InnoDB, a delete merely marks a row with a flag. Why? Because there could be a transaction (maybe that old guy in the corner) that still wants to read the older version. If the row disappeared completely, InnoDB wouldn’t be able to reconstruct the old view it promised that transaction. So it’s a “soft delete,” and only after the purge process sees it’s truly no longer needed does the row get physically removed.
