@@ -78,6 +78,8 @@ A growing list means the system is storing more and more old changes. Often this
 **Don’t Let Transactions Go Zombie**
 Sometimes a script fails, and you’ve got an open transaction lingering in your application. That stuck transaction can freeze your purge process.
 
+If MySQL detects that a transaction remains open (i.e., not committed or rolled back), it won’t automatically close or roll it back unless the client connection is lost or explicitly killed. As a result, the so-called “zombie” transaction can linger, preventing InnoDB’s purge process from doing its job. Here’s how you can address the issue: Use `SHOW PROCESSLIST;` for active transactions and their ages.
+
 **Tune for Write-Heavy Workloads**
 If you’re doing a ton of writes, consider adjusting parameters like `innodb_purge_threads` to help the purge keep up with the pace of incoming changes.
 
