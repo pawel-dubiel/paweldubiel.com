@@ -43,7 +43,7 @@ Latent mode: each “token” step is actually the model’s last hidden state. 
 - <bot> (“begin of thought”): signals when latent mode starts.
 - <eot> (“end of thought”): signals the end of latent mode, returning to normal text generation.
 
-When **<bot>** is encountered, the model no longer maps hidden states to text tokens. Instead, it takes the hidden state from the previous step (which is a continuous vector) and feeds it as the next “input embedding.” This can last for as many steps as we want, until <eot> is encountered.
+When `<bot> `is encountered, the model no longer maps hidden states to text tokens. Instead, it takes the hidden state from the previous step (which is a continuous vector) and feeds it as the next “input embedding.” This can last for as many steps as we want, until <eot> is encountered.
 
 ### 3.3) Training Procedure: Multi-stage Curriculum
 
