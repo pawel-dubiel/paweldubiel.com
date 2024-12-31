@@ -77,11 +77,11 @@ They compare Coconut with baselines:
 
 ### 4.2) Emergent “Breadth-First Search” (BFS) Pattern
 
-A fascinating observation is that when the model reasons in continuous space, it seems to encode multiple possible next steps simultaneously in its hidden states—rather than committing to a single next-step token. This is reminiscent of a BFS or partial expansion of a search tree:
+An interesting observation is that when the model reasons in continuous space, it seems to encode multiple possible next steps simultaneously in its hidden states—rather than committing to a single next-step token. This is reminiscent of a BFS or partial expansion of a search tree:
 
-The model’s first latent state can represent multiple plausible options.
-In subsequent latent steps, the model narrows down these options.
-When forced (by the experimenter) to switch back to text mode at certain points, the model reveals that it’s maintained a distribution over multiple next-step choices. This effectively allows backtracking or multi-branch exploration internally, which is much harder with purely autoregressive language CoT.
+- The model’s first latent state can represent multiple plausible options.
+- In subsequent latent steps, the model narrows down these options.
+- When forced (by the experimenter) to switch back to text mode at certain points, the model reveals that it’s maintained a distribution over multiple next-step choices. This effectively allows backtracking or multi-branch exploration internally, which is much harder with purely autoregressive language CoT.
 
 ## 5) Analysis: Why Latent Space Reasoning Helps
 Hard Steps vs. Easy Steps: In typical CoT, every single token requires the same forward pass of the Transformer, even if it’s just a filler word (“therefore,” “next,” etc.). Latent mode can skip text generation and focus more on the steps that matter.
