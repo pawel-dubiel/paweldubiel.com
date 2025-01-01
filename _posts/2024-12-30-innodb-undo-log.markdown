@@ -38,10 +38,11 @@ This one basically tacks on extra locks to prevent certain anomalies, but from a
 
 Here’s something surprising: the moment you update a row in InnoDB—even before you hit “commit” - the main copy of that row in the data pages is actually changed. This might sound risky, because it seems like other transactions could see your half-done work. But InnoDB has a clever trick called a read view to keep uncommitted changes hidden from others.
 
-A read view is created when a transaction starts (for Repeatable Read) or at the beginning of each statement (for Read Committed). This read view contains a list of active transactions at that point in time. When a transaction attempts to read a row, InnoDB checks the row's transaction ID (the ID of the transaction that last modified the row) against the current transaction's read view.
+A read view is created when a transaction starts (for `Repeatable Read`) or at the beginning of each statement (for `Read Committed`). This read view contains a list of active transactions at that point in time. When a transaction attempts to read a row, InnoDB checks the row's transaction ID (the ID of the transaction that last modified the row) against the current transaction's read view.
 
-If the row was modified by a transaction that is still active (its ID is present in the read view), InnoDB retrieves the older version of the row from the undo log.
-If the row was modified by a transaction that has already committed (its ID is not present in the read view), the transaction reads the latest version directly from the data page.
+- If the row was modified by a transaction that is still active (its ID is present in the read view), InnoDB retrieves the older version of the row from the undo log.
+- If the row was modified by a transaction that has already committed (its ID is not present in the read view), the transaction reads the latest version directly from the data page.
+
 This approach avoids the need to "walk back" through long chains of undo logs for every read. The read view efficiently determines the correct row version to use, ensuring that each transaction sees a consistent snapshot of the data according to its isolation level.
 
 
