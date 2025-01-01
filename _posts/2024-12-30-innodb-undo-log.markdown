@@ -34,10 +34,16 @@ The default. When your transaction starts, you get a “snapshot” of the data 
 ### SERIALIZABLE
 This one basically tacks on extra locks to prevent certain anomalies, but from a visibility perspective, it’s similar to REPEATABLE READ.
 
-## 4. Everyone Uses the Same Data Pages—Right Away!
-Here’s a key point that can be surprising: when you change a row in InnoDB—before you commit—the record in the main data pages is already altered! If someone else comes along to read it, InnoDB has to check whether your transaction is visible to them. If it’s not (maybe you’re still in the middle of your transaction), InnoDB walks back to the undo logs to reconstruct what that row used to be.
+## 4. Data Pages Are Updated Immediately, Visibility is Controlled by Read Views
 
-This is great for concurrency because it means no big chunk of data is locked out for everyone else, but it does create some overhead if multiple uncommitted changes are floating around.
+Here’s something surprising: the moment you update a row in InnoDB—even before you hit “commit” - the main copy of that row in the data pages is actually changed. This might sound risky, because it seems like other transactions could see your half-done work. But InnoDB has a clever trick called a read view to keep uncommitted changes hidden from others.
+
+A read view is created when a transaction starts (for Repeatable Read) or at the beginning of each statement (for Read Committed). This read view contains a list of active transactions at that point in time. When a transaction attempts to read a row, InnoDB checks the row's transaction ID (the ID of the transaction that last modified the row) against the current transaction's read view.
+
+If the row was modified by a transaction that is still active (its ID is present in the read view), InnoDB retrieves the older version of the row from the undo log.
+If the row was modified by a transaction that has already committed (its ID is not present in the read view), the transaction reads the latest version directly from the data page.
+This approach avoids the need to "walk back" through long chains of undo logs for every read. The read view efficiently determines the correct row version to use, ensuring that each transaction sees a consistent snapshot of the data according to its isolation level.
+
 
 ## 5. The Pitfalls of Long-Running Transactions
 Now suppose a single visitor in your library sits down and starts reading. Then, half the day goes by while they’re still in the library, doing research under a transaction that started hours ago. Meanwhile, the library is buzzing with folks updating books. That old transaction has a “very old snapshot,” so every time it reads a row, InnoDB has to jump back through potentially layers and layers of undo records. That’s slow.
@@ -52,17 +58,31 @@ That’s why you often hear, **“Long-running transactions are bad for MySQL.�
 ## 6. Delete Doesn’t Mean Gone
 In the library, if you “delete” a book, you might expect it to vanish instantly from the shelf. But in InnoDB, a delete merely marks a row with a flag. Why? Because there could be a transaction (maybe that old guy in the corner) that still wants to read the older version. If the row disappeared completely, InnoDB wouldn’t be able to reconstruct the old view it promised that transaction. So it’s a “soft delete,” and only after the purge process sees it’s truly no longer needed does the row get physically removed.
 
-## 7. The Global History List and Purge
+## 7. The Purge Process and Undo Log Management
 
-Besides each row linking to previous versions, there’s also a system-wide “timeline” of changes called the global history list. Every transaction that commits adds its chunk of changes to this list. The purge process walks through it, checking which of these changes can be thrown out safely.
+Think of the purge process as a diligent librarian who strolls around the shelves, quietly discarding notes that no one needs anymore. In InnoDB, every time you change data, the old row versions end up in undo logs—the notes tucked away for anyone who might still want to see the “past” state.
 
-It looks at rows flagged as deleted. If nobody needs the old version, the row is removed for good.
-It frees up pages in the undo logs that aren’t needed.
-When you run `SHOW ENGINE INNODB STATUS`, you can see the “History list length.” That number is how many changes in total are floating around waiting for final cleanup. If it starts ballooning, there’s likely a transaction that’s been hanging around, forcing InnoDB to keep a ton of old versions alive.
+**How the Librarian Decides What to Toss**
+
+- There’s a concept called the oldest active read view—basically, the earliest moment in time that any current transaction needs to reference.
+- Anything older than that moment becomes fair game for the purge process to remove. After all, no one left in the library is interested in those older notes anymore.
+
+**About Those ‘Deleted’ Rows**
+
+- When you “delete” a row, you’re just flagging it as gone. It’s like slipping a note on the bookshelf that says, “This volume is outdated.”
+- The purge process later comes along, sees that this row is both flagged and older than what any transaction needs, and permanently removes it—along with its undo log records.
+
+**Tracking the Cleanup**
+
+- If you check SHOW ENGINE INNODB STATUS, you’ll spot a metric called the history list length—it shows how many old notes (undo records) are still lying around, waiting for the librarian (the purge process) to clean them up.
+- If that list keeps growing and never seems to shrink, there’s probably a very old transaction that just won’t let go of the past, holding onto old row versions the purge process can’t throw away yet.
+
 
 ## 8. Under the Hood of Undo Logs
 
-If you look even deeper, you’ll discover that InnoDB can use multiple undo tablespaces—basically, different warehouses to store older versions. There’s also a difference between undo logs for freshly inserted rows (which can be undone by just removing them) and those for updated rows (which keep track of what the old values were). For most people, these internal structures matter less than understanding the big picture: each row can be reconstructed if you follow the chain of undo records. But if you’re a tuning enthusiast, you might adjust how many undo tablespaces you have and how they’re organized.
+If you look even deeper, you’ll discover that InnoDB can use multiple undo tablespaces—basically, different warehouses to store older versions.
+
+There’s also a difference between undo logs for freshly inserted rows (which can be undone by simply deleting the inserted row) and those for updated rows (which keep track of what the old values were). Undo log records are created for inserts, though they are simpler and allow for efficient rollback by directly removing the inserted row. For most people, these internal structures matter less than understanding the big picture: each row can be reconstructed if you follow the chain of undo records. But if you’re a tuning enthusiast, you might adjust how many undo tablespaces you have and how they’re organized.
 
 ## 9. Tips and Tricks
 
