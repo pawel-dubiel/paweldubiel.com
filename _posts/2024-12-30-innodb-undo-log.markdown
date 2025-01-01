@@ -16,6 +16,7 @@ When a transaction (think of it as your user session) starts reading or writing,
 
 ## 2. The Undo Logs: Saving Old Data
 Now, here’s the fun part: how do we hold on to older versions when new versions are being written? 
+
 **Enter the undo log.**
 
 Undo logs are like time machines. Whenever InnoDB changes a row (say, in your library, a page in a book), it doesn’t discard the old version. It copies that old version into the undo log first, then applies the new change to the main data.
